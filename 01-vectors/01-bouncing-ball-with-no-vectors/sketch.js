@@ -16,7 +16,7 @@ const sketch = () => {
     context.fillStyle = "white";
     context.fillRect(0, 0, width, height);
 
-    circle(context, x, y, 20, true);
+    circle(context, x, y, 20);
 
     x += xspeed;
     y += yspeed;
