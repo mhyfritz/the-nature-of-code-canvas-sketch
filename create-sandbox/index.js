@@ -1,6 +1,6 @@
 const fs = require("fs-extra");
 const path = require("path");
-const parser = require("@babel/parser");
+const { transform, parseSync } = require("@babel/core");
 const traverse = require("@babel/traverse").default;
 
 const entry = "sketch.js";
@@ -14,13 +14,12 @@ const files = [entry];
 
 while (files.length > 0) {
   const file = files.pop();
-  fs.copy(file, path.join(outputPath, path.basename(file)));
   const filePath = path.dirname(file);
   const code = fs.readFileSync(file, "utf8");
-  const ast = parser.parse(code, {
-    allowImportExportEverywhere: true,
+  const ast = parseSync(code, {
     sourceType: "module"
   });
+  /* find all relative imports, we need to copy those */
   traverse(ast, {
     enter(branch) {
       if (branch.node.type === "ImportDeclaration") {
@@ -35,8 +34,25 @@ while (files.length > 0) {
       }
     }
   });
+  /* we need to "flatten" all relative imports, e.g. "../../shapes" => "./shapes" */
+  transform(code, { plugins: [rewriteRelativeImport] }, (_, result) => {
+    fs.writeFile(path.join(outputPath, path.basename(file)), result.code);
+  });
 }
 
 function isRelativeModule(name) {
   return name.startsWith(".");
+}
+
+function rewriteRelativeImport() {
+  return {
+    visitor: {
+      ImportDeclaration(path) {
+        let module = path.node.source.value;
+        if (isRelativeModule(module)) {
+          path.node.source.value = module.replace(/(..\/)+/, "./");
+        }
+      }
+    }
+  };
 }
