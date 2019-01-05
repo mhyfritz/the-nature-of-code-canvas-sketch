@@ -13,4 +13,5 @@ export class Vector {
     this.x -= v.x;
     this.y -= v.y;
   }
+
 }

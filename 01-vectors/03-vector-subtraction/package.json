@@ -1,0 +1,15 @@
+{
+  "name": "03-vector-subtraction",
+  "version": "1.0.0",
+  "description": "The Nature of Code example 1.3: Vector substraction",
+  "main": "sketch.js",
+  "scripts": {
+    "start": "npx canvas-sketch sketch.js --open",
+    "create-sandbox": "node ../../create-sandbox/index.js"
+  },
+  "author": "Markus Hsi-Yang Fritz",
+  "license": "MIT",
+  "dependencies": {
+    "canvas-sketch": "^0.2.0"
+  }
+}
