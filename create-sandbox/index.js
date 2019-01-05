@@ -20,17 +20,16 @@ while (files.length > 0) {
     sourceType: "module"
   });
   /* find all relative imports, we need to copy those */
+  /* TODO: can we transform here as well? */
   traverse(ast, {
-    enter(branch) {
-      if (branch.node.type === "ImportDeclaration") {
-        let module = branch.node.source.value;
-        if (isRelativeModule(module)) {
-          module = path.join(filePath, module);
-          if (!module.endsWith(".js")) {
-            module += ".js";
-          }
-          files.push(module);
+    ImportDeclaration(branch) {
+      let module = branch.node.source.value;
+      if (isRelativeModule(module)) {
+        module = path.join(filePath, module);
+        if (!module.endsWith(".js")) {
+          module += ".js";
         }
+        files.push(module);
       }
     }
   });
