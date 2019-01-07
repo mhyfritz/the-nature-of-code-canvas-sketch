@@ -18,4 +18,5 @@ export class Vector {
     this.x *= n;
     this.y *= n;
   }
+
 }
