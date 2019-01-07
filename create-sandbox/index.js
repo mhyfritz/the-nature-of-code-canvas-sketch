@@ -47,7 +47,7 @@ function rewriteRelativeImport() {
   return {
     visitor: {
       ImportDeclaration(path) {
-        let module = path.node.source.value;
+        const module = path.node.source.value;
         if (isRelativeModule(module)) {
           path.node.source.value = module.replace(/(..\/)+/, "./");
         }
