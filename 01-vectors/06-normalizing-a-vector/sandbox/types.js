@@ -30,8 +30,10 @@ export class Vector {
 
   normalize() {
     const m = this.mag();
+
     if (m !== 0) {
       this.div(m);
     }
   }
+
 }
