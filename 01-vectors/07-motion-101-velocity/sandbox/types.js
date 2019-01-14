@@ -1,5 +1,4 @@
 import { circle } from "./shapes";
-
 export class Vector {
   constructor(x = 0, y = 0) {
     this.x = x;
@@ -32,12 +31,13 @@ export class Vector {
 
   normalize() {
     const m = this.mag();
+
     if (m !== 0) {
       this.div(m);
     }
   }
-}
 
+}
 export class Mover {
   constructor(location, velocity) {
     this.location = location;
@@ -56,14 +56,18 @@ export class Mover {
     if (this.location.x > width) {
       this.location.x = 0;
     }
+
     if (this.location.x < 0) {
       this.location.x = width;
     }
+
     if (this.location.y > height) {
       this.location.y = 0;
     }
+
     if (this.location.y < 0) {
       this.location.y = height;
     }
   }
+
 }
