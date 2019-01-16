@@ -1,6 +1,5 @@
 import { circle } from "./shapes";
 import { TWO_PI } from "./constants";
-
 export class Vector {
   constructor(x = 0, y = 0) {
     this.x = x;
@@ -38,6 +37,7 @@ export class Vector {
 
   normalize() {
     const m = this.mag();
+
     if (m !== 0) {
       this.div(m);
     }
@@ -48,8 +48,9 @@ export class Vector {
       this.setMag(maxMag);
     }
   }
-
   /* credits: p5.js */
+
+
   static fromAngle(angle, length = 1) {
     return new Vector(length * Math.cos(angle), length * Math.sin(angle));
   }
@@ -57,8 +58,8 @@ export class Vector {
   static random2D() {
     return this.fromAngle(Math.random() * TWO_PI);
   }
-}
 
+}
 export class Mover {
   constructor(location, velocity, acceleration, topSpeed = 10) {
     this.location = location;
@@ -71,6 +72,7 @@ export class Mover {
     if (newAcceleration) {
       this.acceleration = newAcceleration;
     }
+
     this.velocity.add(this.acceleration);
     this.velocity.limit(this.topSpeed);
     this.location.add(this.velocity);
@@ -84,14 +86,18 @@ export class Mover {
     if (this.location.x > width) {
       this.location.x = 0;
     }
+
     if (this.location.x < 0) {
       this.location.x = width;
     }
+
     if (this.location.y > height) {
       this.location.y = 0;
     }
+
     if (this.location.y < 0) {
       this.location.y = height;
     }
   }
+
 }
