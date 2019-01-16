@@ -1,0 +1,15 @@
+{
+  "name": "10-accelerating-towards-the-mouse",
+  "version": "1.0.0",
+  "description": "The Nature of Code example 1.10: Accelerating towards the mouse",
+  "main": "sketch.js",
+  "scripts": {
+    "start": "npx canvas-sketch sketch.js --open",
+    "create-sandbox": "node ../../create-sandbox/index.js"
+  },
+  "author": "Markus Hsi-Yang Fritz",
+  "license": "MIT",
+  "dependencies": {
+    "canvas-sketch": "^0.2.0"
+  }
+}
