@@ -16,3 +16,4 @@
    8. [Motion 101 (velocity and constant acceleration)](./01-vectors/08-motion-101-velocity-constant-acceleration/)
    9. [Motion 101 (velocity and random acceleration)](./01-vectors/09-motion-101-velocity-random-acceleration/)
    10. [Accelerating towards the mouse](./01-vectors/10-accelerating-towards-the-mouse/)
+   11. [Array of movers accelerating towards the mouse](./01-vectors/11-array-movers-accelerating-towards-mouse/)
