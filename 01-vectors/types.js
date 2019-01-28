@@ -1,5 +1,5 @@
-import { circle } from "./shapes";
-import { TWO_PI } from "./constants";
+import { circle } from "../shapes";
+import { TWO_PI } from "../constants";
 
 export class Vector {
   constructor(x = 0, y = 0) {
