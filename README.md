@@ -19,3 +19,4 @@
    11. [Array of movers accelerating towards the mouse](./01-vectors/11-array-movers-accelerating-towards-mouse/)
 2. Forces
    1. [Forces](./02-forces/01-forces/)
+   2. [Forces acting on many objects](./02-forces/02-forces-acting-on-many-objects/)

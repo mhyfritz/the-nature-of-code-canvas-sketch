@@ -1,6 +1,5 @@
-import { circle } from "../shapes";
-import { TWO_PI } from "../constants";
-
+import { circle } from "./shapes";
+import { TWO_PI } from "./constants";
 export class Vector {
   constructor(x = 0, y = 0) {
     this.x = x;
@@ -38,6 +37,7 @@ export class Vector {
 
   normalize() {
     const m = this.mag();
+
     if (m !== 0) {
       this.div(m);
     }
@@ -48,8 +48,9 @@ export class Vector {
       this.setMag(maxMag);
     }
   }
-
   /* credits: p5.js */
+
+
   static fromAngle(angle, length = 1) {
     return new Vector(length * Math.cos(angle), length * Math.sin(angle));
   }
@@ -69,8 +70,8 @@ export class Vector {
     vec.sub(v2);
     return vec;
   }
-}
 
+}
 export class Mover {
   constructor(options = {}) {
     const {
@@ -79,7 +80,6 @@ export class Mover {
       acceleration = new Vector(),
       mass = 1
     } = options;
-
     this.location = location;
     this.velocity = velocity;
     this.acceleration = acceleration;
@@ -98,7 +98,9 @@ export class Mover {
   }
 
   display(context, options = {}) {
-    const { r = 16 } = options;
+    const {
+      r = 16
+    } = options;
     circle(context, this.location.x, this.location.y, r * this.mass, options);
   }
 
@@ -107,13 +109,16 @@ export class Mover {
       this.location.x = width;
       this.velocity.x *= -1;
     }
+
     if (this.location.x < 0) {
       this.location.x = 0;
       this.velocity.x *= -1;
     }
+
     if (this.location.y > height) {
       this.location.y = height;
       this.velocity.y *= -1;
     }
   }
+
 }
