@@ -9,7 +9,9 @@ const sketch = ({
   width,
   height
 }) => {
-  const mover = new Mover(new Vector(30, 30), new Vector(), new Vector());
+  const mover = new Mover({
+    location: new Vector(30, 30)
+  });
   const wind = new Vector(0.01, 0);
   const gravity = new Vector(0, 0.1);
   return ({

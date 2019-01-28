@@ -73,7 +73,13 @@ export class Vector {
 
 }
 export class Mover {
-  constructor(location, velocity, acceleration, mass = 1) {
+  constructor(options = {}) {
+    const {
+      location = new Vector(),
+      velocity = new Vector(),
+      acceleration = new Vector(),
+      mass = 1
+    } = options;
     this.location = location;
     this.velocity = velocity;
     this.acceleration = acceleration;
