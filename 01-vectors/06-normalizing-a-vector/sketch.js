@@ -1,6 +1,6 @@
 import canvasSketch from "canvas-sketch";
 import { line, rectangle } from "../../shapes";
-import { Vector } from "../../types";
+import { Vector } from "../types";
 import { withMouse } from "../../utils";
 
 const settings = {

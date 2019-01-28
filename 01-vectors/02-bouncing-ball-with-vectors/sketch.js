@@ -1,6 +1,6 @@
 import canvasSketch from "canvas-sketch";
 import { circle } from "../../shapes";
-import { Vector } from "../../types";
+import { Vector } from "../types";
 
 const settings = {
   animate: true,

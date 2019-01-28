@@ -1,5 +1,5 @@
 import canvasSketch from "canvas-sketch";
-import { Mover, Vector } from "../../types";
+import { Mover, Vector } from "../types";
 import { withMouse } from "../../utils";
 
 const settings = {

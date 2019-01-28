@@ -1,6 +1,6 @@
 import canvasSketch from "canvas-sketch";
 import { random } from "canvas-sketch-util";
-import { Mover, Vector } from "../../types";
+import { Mover, Vector } from "../types";
 import { withMouse } from "../../utils";
 
 const settings = {
