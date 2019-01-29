@@ -20,3 +20,4 @@
 2. Forces
    1. [Forces](./02-forces/01-forces/)
    2. [Forces acting on many objects](./02-forces/02-forces-acting-on-many-objects/)
+   3. [Gravity scaled by mass](./02-forces/03-gravity-scaled-by-mass/)
