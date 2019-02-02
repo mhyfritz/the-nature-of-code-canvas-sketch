@@ -22,3 +22,4 @@
    2. [Forces acting on many objects](./02-forces/02-forces-acting-on-many-objects/)
    3. [Gravity scaled by mass](./02-forces/03-gravity-scaled-by-mass/)
    4. [Including friction](./02-forces/04-including-friction/)
+   5. [Fluid resistance](./02-forces/05-fluid-resistance/)

@@ -1,6 +1,5 @@
-import { circle, rectangle } from "../shapes";
-import { TWO_PI } from "../constants";
-
+import { circle, rectangle } from "./shapes";
+import { TWO_PI } from "./constants";
 export class Vector {
   constructor(x = 0, y = 0) {
     this.x = x;
@@ -38,6 +37,7 @@ export class Vector {
 
   normalize() {
     const m = this.mag();
+
     if (m !== 0) {
       this.div(m);
     }
@@ -48,8 +48,9 @@ export class Vector {
       this.setMag(maxMag);
     }
   }
-
   /* credits: p5.js */
+
+
   static fromAngle(angle, length = 1) {
     return new Vector(length * Math.cos(angle), length * Math.sin(angle));
   }
@@ -69,8 +70,8 @@ export class Vector {
     vec.sub(v2);
     return vec;
   }
-}
 
+}
 export class Mover {
   constructor(options = {}) {
     const {
@@ -79,7 +80,6 @@ export class Mover {
       acceleration = new Vector(),
       mass = 1
     } = options;
-
     this.location = location;
     this.velocity = velocity;
     this.acceleration = acceleration;
@@ -98,35 +98,48 @@ export class Mover {
   }
 
   display(context, options = {}) {
-    const { r = 16 } = options;
+    const {
+      r = 16
+    } = options;
     circle(context, this.location.x, this.location.y, r * this.mass, options);
   }
 
   checkEdges(width, height, bounce = true) {
     if (this.location.x > width) {
       this.location.x = width;
+
       if (bounce) {
         this.velocity.x *= -1;
       }
     }
+
     if (this.location.x < 0) {
       this.location.x = 0;
+
       if (bounce) {
         this.velocity.x *= -1;
       }
     }
+
     if (this.location.y > height) {
       this.location.y = height;
+
       if (bounce) {
         this.velocity.y *= -1;
       }
     }
   }
-}
 
+}
 export class Liquid {
   constructor(options = {}) {
-    const { x = 0, y = 0, w = 0, h = 0, c = 0 } = options;
+    const {
+      x = 0,
+      y = 0,
+      w = 0,
+      h = 0,
+      c = 0
+    } = options;
     this.x = x;
     this.y = y;
     this.w = w;
@@ -136,12 +149,7 @@ export class Liquid {
 
   contains(obj) {
     const loc = obj.location;
-    return (
-      loc.x >= this.x &&
-      loc.x < this.x + this.w &&
-      loc.y >= this.y &&
-      loc.y < this.y + this.h
-    );
+    return loc.x >= this.x && loc.x < this.x + this.w && loc.y >= this.y && loc.y < this.y + this.h;
   }
 
   dragForce(obj) {
@@ -159,4 +167,5 @@ export class Liquid {
     rectangle(context, this.x, this.y, this.w, this.h, options);
     context.restore();
   }
+
 }
