@@ -24,3 +24,4 @@
    4. [Including friction](./02-forces/04-including-friction/)
    5. [Fluid resistance](./02-forces/05-fluid-resistance/)
    6. [Attraction](./02-forces/06-attraction/)
+   7. [Attraction with many Movers](./02-forces/07-attraction-with-many-movers/)
