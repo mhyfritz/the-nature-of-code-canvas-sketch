@@ -25,3 +25,4 @@
    5. [Fluid resistance](./02-forces/05-fluid-resistance/)
    6. [Attraction](./02-forces/06-attraction/)
    7. [Attraction with many Movers](./02-forces/07-attraction-with-many-movers/)
+   8. [Mutual attraction](./02-forces/08-mutual-attraction/)
